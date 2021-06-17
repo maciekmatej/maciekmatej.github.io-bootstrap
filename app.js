@@ -17,7 +17,7 @@ form.addEventListener('submit', (e) => {
         const newDelBtn = document.createElement('button');
         newDelBtn.innerHTML ='<i class="bi bi-trash"></i>';
         const btnWrap = document.createElement('div');
-        newDelBtn.classList.add('btn', 'btn-secondary');
+        newDelBtn.classList.add('btn', 'btn-warning');
         newDelBtn.setAttribute('id','delete');
         newDoneBtn.classList.add('btn','btn-success');
         newDoneBtn.setAttribute('id','done')
