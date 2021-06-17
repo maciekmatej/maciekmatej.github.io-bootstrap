@@ -17,6 +17,7 @@ form.addEventListener('submit', (e) => {
         const newDelBtn = document.createElement('button');
         newDelBtn.innerHTML ='<i class="bi bi-trash"></i>';
         const btnWrap = document.createElement('div');
+        btnWrap.classList.add('btn-group')
         newDelBtn.classList.add('btn', 'btn-warning');
         newDelBtn.setAttribute('id','delete');
         newDoneBtn.classList.add('btn','btn-success');
@@ -36,11 +37,15 @@ form.addEventListener('submit', (e) => {
 })
 ul.addEventListener('click', (e) => {
     console.log(e);
-    const liParent = e.target.parentElement.parentElement;
+    const liNode = e.target.parentElement.parentElement;
     if(e.target && e.target.id === "delete"){
-            liParent.remove();
+        liNode.classList.add('fall')
+        liNode.addEventListener('transitionend',() => {
+            liNode.remove();
+        })
+            
     }else if(e.target && e.target.id === "done"){
-        liParent.classList.toggle("strikethrough");
+        liNode.classList.toggle("strikethrough");
        
     }
 
